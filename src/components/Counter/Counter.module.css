@@ -1,0 +1,11 @@
+.counter {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0 2.5rem;
+}
+
+.likes {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}

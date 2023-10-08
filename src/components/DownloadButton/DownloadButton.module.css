@@ -1,0 +1,9 @@
+.downloadButton {
+    width: 234px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #313439;
+    backdrop-filter: blur(13.5px);
+    margin: 0 auto 4.5rem;
+}

@@ -1,25 +1,28 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import getCommentsRequest from "./api/comments/getCommentsRequest";
+import { useEffect, useState } from "react";
+import Counter from "./components/Counter/Counter";
+import Comments from "./components/Comments/Comments";
+import DownloadButton from "./components/DownloadButton/DownloadButton";
+import {  IComment } from "./types/types";
+import { sortCommentsById, sortCommentsTimeAdded } from "./lib/utils";
 
 function App() {
+    const [page, setPage] = useState(1)
+    const [comments, setComments] = useState<IComment[]>([])
+
+    useEffect(() => {
+        console.log(comments);
+       getCommentsRequest(page).then(res => setComments(prev => [...prev, ...sortCommentsById(sortCommentsTimeAdded(res.data))]))
+    }, [page])
+
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Counter comments={comments}/>
+            <Comments comments={comments}/>
+            <DownloadButton page={page} setPage={setPage}/>
+        </>
     );
 }
 
