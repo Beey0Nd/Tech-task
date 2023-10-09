@@ -11,7 +11,7 @@ interface Props {
 }
 
 function Counter({ comments, likesCounter, setLikesCounter, addedLikesRef }: Props): ReactElement {
-    const [commentsCounter, setCommentsCounter] = useState(0)
+    const [commentsCounter, setCommentsCounter] = useState<number>(0)
 
     useEffect(() => {
         setCommentsCounter(comments.length)

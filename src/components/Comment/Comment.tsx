@@ -12,10 +12,10 @@ interface Props {
 }
 
 function Comment({ comment, setLikesCounter, addedLikesRef }: Props) {
-    const [authorName, setAuthorName] = useState("")
-    const [authorImage, setAuthorImage] = useState("")
-    const [liked, setLiked] = useState(false)
-    const [likes, setLikes] = useState(comment.likes)
+    const [authorName, setAuthorName] = useState<string>("")
+    const [authorImage, setAuthorImage] = useState<string>("")
+    const [liked, setLiked] = useState<boolean>(false)
+    const [likes, setLikes] = useState<number>(comment.likes)
 
     useEffect(() => {
         findAuthor(comment).then(res => {

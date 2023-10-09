@@ -16,8 +16,6 @@ function App() {
     const [totalPages, setTotalPages] = useState<number>(0);
     const addedLikesRef = useRef(0)
 
-
-
     useEffect(() => {
         getCommentsRequest(page)
         .then(res => {
