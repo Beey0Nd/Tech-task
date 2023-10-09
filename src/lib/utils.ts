@@ -26,7 +26,7 @@ export function getFormattedDate(date: string) {
 
     const hoursAgo = new Date().getHours() - new Date(date).getHours();
 
-    if (hoursAgo > 0 && hoursAgo < 12) {
+    if (hoursAgo > 0 && hoursAgo < 6) {
         return `${hoursAgo} ${determineEnding(hoursAgo)} назад`
     }
 
