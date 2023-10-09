@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Tech-task/static/css/main.a166a187.css",
+    "main.js": "/Tech-task/static/js/main.0af24e42.js",
+    "static/media/background-filter.png": "/Tech-task/static/media/background-filter.bbdd2e72f890b2d73939.png",
+    "static/media/background.png": "/Tech-task/static/media/background.3191a87d8f585a8ac122.png",
+    "static/media/han-solo.jpg": "/Tech-task/static/media/han-solo.84705bac66e252072c67.jpg",
+    "static/media/filled-red-heart.svg": "/Tech-task/static/media/filled-red-heart.d34adae103ebfca8b7735e4510714523.svg",
+    "static/media/hollow-heart.svg": "/Tech-task/static/media/hollow-heart.31cd314b69985989be454d34364baef7.svg",
+    "static/media/hollow-red-heart.svg": "/Tech-task/static/media/hollow-red-heart.ab6d1e2692a965483004df9b0ab2da65.svg",
+    "index.html": "/Tech-task/index.html",
+    "main.a166a187.css.map": "/Tech-task/static/css/main.a166a187.css.map",
+    "main.0af24e42.js.map": "/Tech-task/static/js/main.0af24e42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a166a187.css",
+    "static/js/main.0af24e42.js"
+  ]
+}
