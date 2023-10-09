@@ -1,27 +1,26 @@
-import { useEffect, useState } from "react";
-import getCommentsRequest from "src/api/comments/getCommentsRequest";
 import classes from "./DownloadButton.module.css"
 
 interface Props {
     page: number,
-    setPage: React.Dispatch<React.SetStateAction<number>>
+    setPage: React.Dispatch<React.SetStateAction<number>>,
+    totalPages: number,
+    error: boolean,
+    setError: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function DownloadButton({page, setPage}: Props) {
-    const [maxPages, setMaxPages] = useState(0)
-
-    useEffect(() => {
-        // getCommentsRequest()
-    }, [])
+function DownloadButton({page, setPage, totalPages, error, setError}: Props) {
 
     function handleClick() {
+        setError(false)
         if(page < 3) {
             setPage(prev => prev + 1)
         }
     }
-
+    
     return (
-        <button className={classes.downloadButton} onClick={handleClick}>Загрузить еще</button>
+        <button 
+        style={{display: page >= totalPages ? "none" : "block"}}
+        className={classes.downloadButton} onClick={handleClick}>{error ? "Возникла ошибка. Попробуйте еще раз." : "Загрузить еще"}</button>
     );
 }
 

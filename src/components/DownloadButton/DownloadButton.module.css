@@ -6,4 +6,9 @@
     background: #313439;
     backdrop-filter: blur(13.5px);
     margin: 0 auto 4.5rem;
+    cursor: pointer;
+}
+
+.downloadButton:hover {
+    background: #747a85;
 }

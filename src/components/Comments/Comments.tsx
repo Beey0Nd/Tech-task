@@ -1,18 +1,22 @@
+import Comment from "../Comment/Comment"
 import { IComment } from "src/types/types"
 import classes from "./Comments.module.css"
-import Comment from "../Comment/Comment"
 
 interface Props {
-    comments: IComment[]
+    comments: IComment[],
+    setLikesCounter: React.Dispatch<React.SetStateAction<number>>,
+    addedLikesRef: React.MutableRefObject<number>
 }
 
-function Comments({ comments }: Props) {
+function Comments({ comments, setLikesCounter, addedLikesRef }: Props) {
     return (
         <>
             <ul className={classes.comments}>
                 {
                     comments.map(comment => (
-                        <Comment key={comment.id} comment={comment} />
+                        <Comment
+                        addedLikesRef={addedLikesRef} 
+                        setLikesCounter={setLikesCounter} key={comment.id} comment={comment} />
                     ))
                 }
             </ul>
